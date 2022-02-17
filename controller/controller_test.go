@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/smmd/academy-go-q42021/wpool"
+	"github.com/smmd/go-dispatch-bootcamp/wpool"
 )
 
 func Test_WorkerRequest(t *testing.T) {

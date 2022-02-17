@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/smmd/academy-go-q42021/model"
+	"github.com/smmd/go-dispatch-bootcamp/model"
 )
 
 const FileName = "repository/files/pokedex_data.csv"

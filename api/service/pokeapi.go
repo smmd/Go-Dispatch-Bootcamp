@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/smmd/academy-go-q42021/model"
+	"github.com/smmd/go-dispatch-bootcamp/model"
 )
 
 type setter interface {

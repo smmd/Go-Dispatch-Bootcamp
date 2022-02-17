@@ -3,10 +3,10 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/smmd/academy-go-q42021/api/service"
-	"github.com/smmd/academy-go-q42021/controller"
-	"github.com/smmd/academy-go-q42021/repository"
-	"github.com/smmd/academy-go-q42021/wpool"
+	"github.com/smmd/go-dispatch-bootcamp/api/service"
+	"github.com/smmd/go-dispatch-bootcamp/controller"
+	"github.com/smmd/go-dispatch-bootcamp/repository"
+	"github.com/smmd/go-dispatch-bootcamp/wpool"
 )
 
 func Route() {

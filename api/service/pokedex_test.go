@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/smmd/academy-go-q42021/model"
+	"github.com/smmd/go-dispatch-bootcamp/model"
 )
 
 var pokemonsters = model.PokeMonsters{

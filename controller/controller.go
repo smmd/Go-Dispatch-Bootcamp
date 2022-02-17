@@ -8,8 +8,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 
-	"github.com/smmd/academy-go-q42021/model"
-	"github.com/smmd/academy-go-q42021/wpool"
+	"github.com/smmd/go-dispatch-bootcamp/model"
+	"github.com/smmd/go-dispatch-bootcamp/wpool"
 )
 
 type search interface {

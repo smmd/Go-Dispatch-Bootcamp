@@ -1,7 +1,7 @@
 package main
 
 import (
-	pokerouter "github.com/smmd/academy-go-q42021/api/router"
+	pokerouter "github.com/smmd/go-dispatch-bootcamp/api/router"
 )
 
 func main() {
