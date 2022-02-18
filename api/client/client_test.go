@@ -7,7 +7,8 @@ import (
 )
 
 func Test_GenerateJWT(t *testing.T) {
-	actual, err := GenerateJWT()
+	client := NewTokenGenerator()
+	actual, err := client.GenerateToken()
 
 	assert.Equal(t, 163, len(actual))
 	assert.Nil(t, err)

@@ -25,18 +25,35 @@ type pokeworker interface {
 	PokemonWorkerPool(wpool.Request) wpool.Response
 }
 
+type tokenclient interface {
+	GenerateToken() (string, error)
+}
+
 type PokemonsHandler struct {
 	searchService search
 	apiService    pokeapi
 	pokeWorker    pokeworker
+	tokenClient   tokenclient
 }
 
-func NewPokemonsHandler(search search, pokeapi pokeapi, pokeworker pokeworker) PokemonsHandler {
+func NewPokemonsHandler(search search, pokeapi pokeapi, pokeworker pokeworker, tokenclient tokenclient) PokemonsHandler {
 	return PokemonsHandler{
 		search,
 		pokeapi,
 		pokeworker,
+		tokenclient,
 	}
+}
+
+func (ph PokemonsHandler) GenerateToken(c *gin.Context) {
+	token, err := ph.tokenClient.GenerateToken()
+
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, fmt.Errorf(err.Error()))
+		return
+	}
+
+	c.JSON(http.StatusOK, token)
 }
 
 func (ph PokemonsHandler) PokeMonsters(c *gin.Context) {

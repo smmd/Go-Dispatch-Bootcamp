@@ -4,12 +4,18 @@ import (
     "fmt"
     "time"
 
-    jwt "github.com/dgrijalva/jwt-go"
+    "github.com/dgrijalva/jwt-go"
 )
 
 var signingKey = []byte("secretphrase")
 
-func GenerateJWT() (string, error) {
+type TokenGenerator struct{}
+
+func NewTokenGenerator() TokenGenerator {
+    return TokenGenerator{}
+}
+
+func (TokenGenerator) GenerateToken() (string, error) {
     token := jwt.New(jwt.SigningMethodHS256)
 
     claims := token.Claims.(jwt.MapClaims)
@@ -28,14 +34,4 @@ func GenerateJWT() (string, error) {
     return tokenString, nil
 }
 
-func main() {
-    fmt.Println("My Simple Client")
-
-    tokenString, err := GenerateJWT()
-
-    if err != nil {
-        fmt.Println("Error generating token string")
-    }
-
-    fmt.Println(tokenString)
-}
+//Middleware function
