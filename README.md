@@ -22,9 +22,9 @@ Running server:
 go run main.go
 ```
 
-AUTH
-```language
-TODO
+To access API endpoint's is needed generate a token.
+```curl
+curl http://localhost:3001/generate-token/
 ```
 
 GET All Poke monsters:
